@@ -27,6 +27,20 @@ app.get('/',(req, res) => {
 	res.render('index')
 })
 
+app.get('/register',(req, res) => {
+    res.render('register')
+})
+
+app.post('/registrarUsuario', (req, res) => {
+    res.render('registrarUsuario', {
+        documento: req.body.documento,
+        nombre: req.body.nombre,
+        correo: req.body.correo,
+        telefono: req.body.telefono,
+        tipo: req.body.tipo
+    })
+})
+
 app.listen(3000, () => {
 	console.log('Escuchando en el puerto 3000')
 })

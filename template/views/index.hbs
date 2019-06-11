@@ -3,33 +3,40 @@
         <div class="row">
             <div class="col-md-6 login-form-1">
                 <h3>Coordinador</h3>
-                
+                <form action="/coordinador" method="post">
                     <div class="form-group">
-                        <input type="text" class="form-control" placeholder="Your Email *" value="" />
+                        <input type="text" class="form-control" placeholder="Usuario *" required/>
                     </div>
                     <div class="form-group">
-                        <input type="password" class="form-control" placeholder="Your Password *" value="" />
+                        <input type="password" class="form-control" placeholder="Contraseña *" required/>
                     </div>
                     <div class="form-group">
-                        <input type="submit" class="btnSubmit" value="Login" />
+                        <button type="submit" class="btnSubmit">Ingresar</button>
                     </div>
+                    <div class="form-group">
+                        <a href="/register" style="color:white;">Registrarse</a>
+                    </div>
+                </form>
             </div>
             <div class="col-md-6 login-form-2">
                 <div class="login-logo">
                     <img src="img/jarvis.png" class="image-fluid" alt="Logo"/>
                 </div>
                 <h3>Aspirante</h3>
+                <form action="/aspirante" method="post">
                     <div class="form-group">
-                        <input type="text" class="form-control" placeholder="Your Email *" value="" />
+                        <input type="text" class="form-control" placeholder="Usuario *" required/>
                     </div>
                     <div class="form-group">
-                        <input type="password" class="form-control" placeholder="Your Password *" value="" />
+                        <input type="password" class="form-control" placeholder="Contraseña *" required/>
                     </div>
                     <div class="form-group">
-                        <input type="submit" class="btnSubmit" value="Login" />
+                        <button type="submit" class="btnSubmit">Ingresar</button>
+                    </div>
+                    <div class="form-group">
+                        <a href="/register" style="color:white;">Registrarse</a>
                     </div>
                 </form>
-                <br>
                 <button class="btn btn-primary btn-block">Ingresar como interesado.</button>
             </div>
         </div>
