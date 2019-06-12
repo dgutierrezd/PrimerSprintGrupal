@@ -74,6 +74,43 @@ app.post('/aspirante', (req, res) => {
     }
 })
 
+app.get('/coordinador/index', (req, res) => {
+    res.render('coordinador')
+})
+
+app.get('/coordinador/cursos', (req, res) => {
+    res.render('cursosCoordinador')
+})
+
+app.get('/coordinador/crear', (req, res) => {
+    res.render('crearCoordinador')
+})
+
+app.post('/creacionCurso',(req, res) => {
+	
+	res.render('creacionCurso', {
+        id: req.body.id,
+        nombre: req.body.nombre,
+        descripcion: req.body.descripcion,
+        valor:req.body.valor,
+        estado:req.body.estado
+	});
+})
+
+app.get('/aspirante/index', (req, res) => {
+    res.render('aspirante')
+})
+
+app.get('/aspirante/cursos', (req, res) => {
+    res.render('cursosAspirante')
+})
+
+app.post('/aspirante/verCursos', (req, res) => {
+    res.render('verCursosAspirante', {
+        documento: req.body.documento
+    })
+})
+
 app.listen(3000, () => {
 	console.log('Escuchando en el puerto 3000')
 })
