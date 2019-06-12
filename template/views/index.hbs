@@ -3,12 +3,15 @@
         <div class="row">
             <div class="col-md-6 login-form-1">
                 <h3>Coordinador</h3>
-                <form action="/coordinador" method="post">
+                <div id="respuesta" class="order-md-1">
+                    {{{respuestaAlertCoord respuestaCoord}}}
+                </div>
+                <form action="/coordinador" method="post" novalidate>
                     <div class="form-group">
-                        <input type="text" class="form-control" placeholder="Usuario *" required/>
+                        <input type="text" class="form-control" name="username" placeholder="Usuario *" required/>
                     </div>
                     <div class="form-group">
-                        <input type="password" class="form-control" placeholder="Contraseña *" required/>
+                        <input type="password" class="form-control" name="contrasena" placeholder="Contraseña *" required/>
                     </div>
                     <div class="form-group">
                         <button type="submit" class="btnSubmit">Ingresar</button>
@@ -23,12 +26,15 @@
                     <img src="img/jarvis.png" class="image-fluid" alt="Logo"/>
                 </div>
                 <h3>Aspirante</h3>
-                <form action="/aspirante" method="post">
+                <div id="respuesta" class="order-md-1">
+                    {{{respuestaAlertAsp respuestaAsp}}}
+                </div>
+                <form action="/aspirante" method="post" novalidate>
                     <div class="form-group">
-                        <input type="text" class="form-control" placeholder="Usuario *" required/>
+                        <input type="text" class="form-control" name="username" placeholder="Usuario *" required/>
                     </div>
                     <div class="form-group">
-                        <input type="password" class="form-control" placeholder="Contraseña *" required/>
+                        <input type="password" class="form-control" name="contrasena" placeholder="Contraseña *" required/>
                     </div>
                     <div class="form-group">
                         <button type="submit" class="btnSubmit">Ingresar</button>

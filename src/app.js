@@ -3,7 +3,7 @@ const app = express();
 const path = require('path');
 const hbs = require('hbs');
 const bodyParser = require('body-parser');
-require('./helpers');
+const helpers = require('./helpers');
 
 const directoriopublico = path.join(__dirname, '../public');
 app.set('views', path.join(__dirname, '../template/views'));
@@ -39,6 +39,39 @@ app.post('/registrarUsuario', (req, res) => {
         telefono: req.body.telefono,
         tipo: req.body.tipo
     })
+})
+
+app.post('/coordinador', (req, res) => {
+
+    let usuario = {
+        username: req.body.username,
+        contrasena: req.body.contrasena
+    }
+
+    let ingreso = helpers.ingresarCoord(usuario)
+    if(ingreso) {
+        res.render('coordinador')
+    } else {
+        res.render('index', {
+            respuestaCoord: 'El usuario o la contraseña son incorrectos.'
+        })
+    }
+})
+
+app.post('/aspirante', (req, res) => {
+    let usuario = {
+        username: req.body.username,
+        contrasena: req.body.contrasena
+    }
+
+    let ingreso = helpers.ingresarAsp(usuario)
+    if(ingreso) {
+        res.render('aspirante')
+    } else {
+        res.render('index', {
+            respuestaAsp: 'El usuario o la contraseña son incorrectos.'
+        })
+    }
 })
 
 app.listen(3000, () => {

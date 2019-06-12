@@ -3,7 +3,7 @@ const fs = require('fs');
 const path = require('path');
 const archivoUsuarios = path.join(__dirname, './usuarios.json');
 
-usarios = []
+usuarios = []
 
 hbs.registerHelper('registrarUsuario', (documento, nombre, correo, telefono, tipo) => {
     usuarios = require(archivoUsuarios);
@@ -26,3 +26,47 @@ const guardarUsuarios = () => {
     })
 }
 
+hbs.registerHelper('respuestaAlertCoord', (respuestaCoord) => {
+    if(!respuestaCoord) {
+        return ''
+    }
+    else {
+        return `<div class="alert alert-danger" role="alert">
+                    ${respuestaCoord}
+                </div>`
+   }    
+})
+
+hbs.registerHelper('respuestaAlertAsp', (respuestaAsp) => {
+    if(!respuestaAsp) {
+        return ''
+    }
+    else {
+        return `<div class="alert alert-danger" role="alert">
+                    ${respuestaAsp}
+                </div>`
+   }    
+})
+
+const ingresarCoord  = usuario => {
+    usuarios = require(archivoUsuarios);
+
+    if(usuarios.find(user => (user.documento == usuario.username && user.documento == usuario.contrasena) && user.tipo == 'coordinador'))
+        return true;        
+    else
+        return false;
+}
+
+const ingresarAsp  = usuario => {
+    usuarios = require(archivoUsuarios);
+
+    if(usuarios.find(user => (user.documento == usuario.username && user.documento == usuario.contrasena) && user.tipo == 'aspirante'))
+        return true;        
+    else
+        return false;
+}
+
+module.exports = {
+    ingresarCoord,
+    ingresarAsp
+}
