@@ -111,6 +111,83 @@ app.post('/aspirante/verCursos', (req, res) => {
     })
 })
 
+app.get('/aspirante/inscribir', (req, res) => {
+    res.render('inscribirAspirante')
+})
+
+app.get('/estudianteEliminado', (req, res) => {
+    res.render('estudianteEliminado', {
+        documento: req.query.documento,
+        id: req.query.id
+    })
+})
+
+app.get('/eliminarCurso', (req, res) => {
+    res.render('cursoEliminado', {
+        documento: req.query.documento,
+        id: req.query.id
+    })
+})
+
+app.post('/registrarInscripcion', (req, res) => {
+    res.render('registrarInscripcion', {
+        idCurso: req.body.idCurso,
+        documento: req.body.documento,
+        nombre: req.body.nombre,
+        correo: req.body.correo,
+        telefono: req.body.telefono
+    })
+})
+
+app.get('/inscribir', (req,res) => {
+    res.render('inscribir', {
+        id:req.query.id
+    })
+})
+
+app.get('/estudiantesInscritos', (req, res) => {
+    res.render('estudiantesInscritos', {
+        id:req.query.id
+    })
+})
+
+app.get('/cerrarCurso', (req, res) => {
+    res.render('cerrarCurso', {
+        id: req.query.id
+    })
+})
+
+app.get('/abrirCurso', (req, res) => {
+    res.render('abrirCurso', {
+        id: req.query.id
+    })
+})
+
+app.get('/estudianteEliminado', (req, res) => {
+    res.render('estudianteEliminado', {
+        documento: req.query.documento,
+        id: req.query.id
+    })
+})
+
+app.get('/coordinador/gestion', (req, res) => {
+    res.render('gestionCoordinador')
+})
+
+app.get('/rolDocente', (req, res) => {
+    res.render('rolDocente', {
+        documento: req.query.documento
+    })
+})
+
+app.get('/interesado', (req, res) => {
+    res.render('interesado')
+})
+
+app.get('/interesado/cursos', (req, res) => {
+    res.render('cursosInteresado')
+})
+
 app.listen(3000, () => {
 	console.log('Escuchando en el puerto 3000')
 })

@@ -1,0 +1,27 @@
+{{>headerAspirante}}
+        
+        <h2 class="text-center">Inscripcion</h2>
+        {{{inscribir id}}}
+        <br>
+        <form action="/registrarInscripcion" method="post">
+            <div class="row col-md-12">
+                <h4>Por favor ingrese sus datos:</h4>
+            </div>
+            <div class="row col-md-12">
+                <input type="hidden" name="idCurso" value={{id}}>
+                <div class="col">
+                    <input class="form-control" type="number" name="documento" placeholder="Número de Documento" required>
+                </div>
+                <div class="col">
+                    <input class="form-control" type="text" name="nombre" placeholder="Nombres y Apellidos" required>
+                </div>
+                <div class="col">
+                    <input class="form-control" type="email" name="correo" placeholder="Correo electrónico" required>
+                </div>
+                <div class="col">
+                    <input class="form-control" type="number" name="telefono" placeholder="Teléfono" required>
+                </div>
+                <button type="submit" class="btn btn-primary">Enviar</button>
+            </div>
+        </form>
+{{>footer}}
