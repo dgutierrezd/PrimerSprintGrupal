@@ -180,6 +180,12 @@ app.get('/rolDocente', (req, res) => {
     })
 })
 
+app.get('/rolAspirante', (req, res) => {
+    res.render('rolAspirante', {
+        documento: req.query.documento
+    })
+})
+
 app.get('/interesado', (req, res) => {
     res.render('interesado')
 })
